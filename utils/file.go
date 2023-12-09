@@ -1,11 +1,16 @@
 package utils
 
 import (
+	"fmt"
 	"io"
 	"os"
 
 	"github.com/sorenisanerd/aoc2023/data"
 )
+
+func InputData(year, day int) string {
+	return GetData(fmt.Sprintf("%d/day%d.txt", year, day))
+}
 
 func GetData(fname string) string {
 	buf, err := data.Content.ReadFile(fname)

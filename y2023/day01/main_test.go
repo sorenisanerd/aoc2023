@@ -1,4 +1,4 @@
-package day01
+package main
 
 import (
 	"testing"
@@ -21,17 +21,17 @@ zoneight234
 7pqrstsixteen`
 
 func Test_Part1(t *testing.T) {
-	assert.Equal(t, 142, Part1(day1sample1))
+	assert.Equal(t, 142, part(day1sample1, false))
 }
 
 func Test_Part2(t *testing.T) {
-	assert.Equal(t, 281, Part2(day1sample2))
+	assert.Equal(t, 281, part(day1sample2, true))
 }
 
 func Test_FullPart1(t *testing.T) {
-	assert.Equal(t, 54697, Part1(utils.GetData("day1.txt")))
+	assert.Equal(t, 54697, part(utils.GetData("2023/day1.txt"), false))
 }
 
 func Test_FullPart2(t *testing.T) {
-	assert.Equal(t, 54885, Part2(utils.GetData("day1.txt")))
+	assert.Equal(t, 54885, part(utils.GetData("2023/day1.txt"), true))
 }

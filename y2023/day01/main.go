@@ -1,18 +1,21 @@
-package day01
+package main
 
 import (
+	"fmt"
 	"strings"
+
+	"github.com/sorenisanerd/aoc2023/utils"
 )
 
-func Part1(input string) int {
-	return day1part(input, false)
+func main() {
+	fmt.Println(Parts(utils.GetData("2023/day1.txt")))
 }
 
-func Part2(input string) int {
-	return day1part(input, true)
+func Parts(s string) (int, int) {
+	return part(s, false), part(s, true)
 }
 
-func day1part(input string, allowWords bool) int {
+func part(input string, allowWords bool) int {
 	total := 0
 	for _, l := range strings.Split(input, "\n") {
 		digits := getDigits(l, allowWords)
@@ -27,9 +30,8 @@ func day1part(input string, allowWords bool) int {
 func getDigits(l string, allowWords bool) []int {
 	rv := []int{}
 	for len(l) > 0 {
-		x := l[0]
-		if x >= '0' && x <= '9' {
-			rv = append(rv, int(x-'0'))
+		if x := l[0]; utils.IsDigit(x) {
+			rv = append(rv, utils.MustAtoi(string(x)))
 		} else if allowWords {
 			for i, w := range strings.Split("one two three four five six seven eight nine", " ") {
 				if strings.HasPrefix(l, w) {

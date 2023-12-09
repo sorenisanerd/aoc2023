@@ -1,9 +1,18 @@
-package day02
+package main
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/sorenisanerd/aoc2023/utils"
 )
+
+func main() {
+	fmt.Println(
+		Part1(utils.GetData("2023/day2.txt")),
+		Part2(utils.GetData("2023/day2.txt")))
+}
 
 type cubes struct {
 	red   int
@@ -72,14 +81,6 @@ LineLoop:
 }
 
 func Part2(s string) int {
-	max := func(a, b int) int {
-		if a > b {
-			return a
-		} else {
-			return b
-		}
-	}
-
 	rv := 0
 	for _, l := range strings.Split(s, "\n") {
 		needed := cubes{}
@@ -93,8 +94,7 @@ func Part2(s string) int {
 			needed.green = max(needed.green, round.green)
 			needed.blue = max(needed.blue, round.blue)
 		}
-		power := needed.red * needed.green * needed.blue
-		rv += power
+		rv += needed.red * needed.green * needed.blue
 	}
 	return rv
 }

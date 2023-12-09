@@ -1,55 +1,38 @@
 package main
 
 import (
-	"fmt"
-	"io"
-	"net/http"
+	"log"
 	"os"
-	"strconv"
 
-	"github.com/sorenisanerd/aoc2023/day01"
-	"github.com/sorenisanerd/aoc2023/day02"
-	"github.com/sorenisanerd/aoc2023/utils"
+	"github.com/mitchellh/cli"
+	"github.com/sorenisanerd/aoc2023/cmd"
 )
 
-func getInput(day int) io.Reader {
-	url := fmt.Sprintf("https://adventofcode.com/2023/day/%d/input", day)
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		panic(err)
-	}
+func commands() map[string]cli.CommandFactory {
+	return map[string]cli.CommandFactory{
+		"getInput": func() (cli.Command, error) {
+			return cmd.GetInputCommand{}, nil
+		},
 
-	req.AddCookie(&http.Cookie{
-		Name:  "session",
-		Value: aocCookie,
-	})
+		"submitAnswer": func() (cli.Command, error) {
+			return cmd.SubmitAnswerCommand{}, nil
+		},
 
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		panic(err)
+		"run": func() (cli.Command, error) {
+			return cmd.RunCommand{}, nil
+		},
 	}
-	return resp.Body
 }
 
 func main() {
-	if len(os.Args) > 1 {
-		if os.Args[1] == "getInput" {
-			day, err := strconv.Atoi(os.Args[2])
-			if err != nil {
-				panic(err)
-			}
+	c := cli.NewCLI("aoc", "2023.12.09")
+	c.Args = os.Args[1:]
+	c.Commands = commands()
+	exitStatus, err := c.Run()
 
-			inputReader := getInput(day)
-			fp, err := os.Create(fmt.Sprintf("data/day%d.txt", day))
-			if err != nil {
-				panic(err)
-			}
-			io.Copy(fp, inputReader)
-			return
-		}
+	if err != nil {
+		log.Println(err)
 	}
-	fmt.Println(day01.Part1(utils.GetData("day1.txt")))
-	fmt.Println(day01.Part2(utils.GetData("day1.txt")))
-	fmt.Println(day02.Part1(utils.GetData("day2.txt")))
-	fmt.Println(day02.Part2(utils.GetData("day2.txt")))
+
+	os.Exit(exitStatus)
 }

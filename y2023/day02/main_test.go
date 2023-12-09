@@ -1,4 +1,4 @@
-package day02
+package main
 
 import (
 	"testing"
@@ -22,9 +22,9 @@ func Test_Part2(t *testing.T) {
 }
 
 func Test_Part1Full(t *testing.T) {
-	assert.Equal(t, 2283, Part1(utils.GetData("day2.txt")))
+	assert.Equal(t, 2283, Part1(utils.GetData("2023/day2.txt")))
 }
 
 func Test_Part2Full(t *testing.T) {
-	assert.Equal(t, 78669, Part2(utils.GetData("day2.txt")))
+	assert.Equal(t, 78669, Part2(utils.GetData("2023/day2.txt")))
 }
