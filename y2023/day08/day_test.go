@@ -21,7 +21,7 @@ func TestPart2Sample(t *testing.T) {
 }
 
 func TestFull(t *testing.T) {
-	p1, p2 := Parts(utils.GetData("2023/day8.txt"))
+	p1, p2 := Parts(utils.GetDayData(2023, 8))
 	assert.Equal(t, 14257, p1)
 	assert.Equal(t, 16187743689077, p2)
 }

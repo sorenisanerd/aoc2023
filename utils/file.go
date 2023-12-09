@@ -8,8 +8,8 @@ import (
 	"github.com/sorenisanerd/aoc2023/data"
 )
 
-func InputData(year, day int) string {
-	return GetData(fmt.Sprintf("%d/day%d.txt", year, day))
+func GetDayData(year, day int) string {
+	return GetData(fmt.Sprintf("%04d/day%d.txt", year, day))
 }
 
 func GetData(fname string) string {

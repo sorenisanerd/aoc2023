@@ -12,7 +12,7 @@ func TestParts(t *testing.T) {
 	assert.Equal(t, 288, p1)
 	assert.Equal(t, 71503, p2)
 
-	p1, p2 = Parts(utils.GetData("2023/day6.txt"))
+	p1, p2 = Parts(utils.GetDayData(2023, 6))
 	assert.Equal(t, 781200, p1)
 	assert.Equal(t, 49240091, p2)
 }

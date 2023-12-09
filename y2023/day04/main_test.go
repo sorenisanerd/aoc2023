@@ -18,7 +18,7 @@ func Test_Parts(t *testing.T) {
 	p1, p2 := Parts(sample)
 	assert.Equal(t, 13, p1)
 	assert.Equal(t, 30, p2)
-	p1, p2 = Parts(utils.InputData(2023, 4))
+	p1, p2 = Parts(utils.GetDayData(2023, 4))
 	assert.Equal(t, 17782, p1)
 	assert.Equal(t, 8477787, p2)
 }

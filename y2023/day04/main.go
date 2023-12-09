@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	fmt.Println(Parts(utils.InputData(2023, 4)))
+	fmt.Println(Parts(utils.GetDayData(2023, 4)))
 }
 
 func Parts(s string) (int, int) {

@@ -14,7 +14,7 @@ Distance:  9  40  200`
 
 func main() {
 	Parts(sample)
-	Parts(utils.GetData("2023/day6.txt"))
+	Parts(utils.GetDayData(2023, 6))
 }
 
 func ExtractInts(s string) []int {

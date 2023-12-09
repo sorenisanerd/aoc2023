@@ -36,7 +36,7 @@ var sample3 = `LR
 XXX = (XXX, XXX)`
 
 func main() {
-	fmt.Println(Parts(utils.GetData("2023/day8.txt")))
+	fmt.Println(Parts(utils.GetDayData(2023, 8)))
 }
 
 func Parts(s string) (int, int) {

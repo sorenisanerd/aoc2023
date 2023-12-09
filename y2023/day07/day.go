@@ -18,7 +18,7 @@ QQQJA 483`
 
 func main() {
 	fmt.Println(Parts(sample))
-	fmt.Println(Parts(utils.GetData("2023/day7.txt")))
+	fmt.Println(Parts(utils.GetDayData(2023, 7)))
 }
 
 const (

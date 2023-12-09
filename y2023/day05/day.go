@@ -65,7 +65,7 @@ humidity-to-location map:
 `
 
 func main() {
-	Parts(utils.GetData("2023/day5.txt"))
+	Parts(utils.GetDayData(2023, 5))
 }
 
 func ExtractInts(s string) []int {

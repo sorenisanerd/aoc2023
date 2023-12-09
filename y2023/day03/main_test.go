@@ -23,7 +23,7 @@ func Test_Part1(t *testing.T) {
 }
 
 func Test_Part1Full(t *testing.T) {
-	assert.Equal(t, 527144, Part1(utils.GetData("2023/day3.txt")))
+	assert.Equal(t, 527144, Part1(utils.GetDayData(2023, 3)))
 }
 
 func Test_Part2(t *testing.T) {
@@ -31,5 +31,5 @@ func Test_Part2(t *testing.T) {
 }
 
 func Test_Part2Full(t *testing.T) {
-	assert.Equal(t, 81463996, Part2(utils.GetData("2023/day3.txt")))
+	assert.Equal(t, 81463996, Part2(utils.GetDayData(2023, 3)))
 }

@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	fmt.Println(Parts(utils.GetData("2023/day3.txt")))
+	fmt.Println(Parts(utils.GetDayData(2023, 3)))
 }
 
 type XY = utils.XY

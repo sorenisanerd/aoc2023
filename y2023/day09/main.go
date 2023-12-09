@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println(Parts(utils.GetData("2023/day9.txt")))
+	fmt.Println(Parts(utils.GetDayData(2023, 9)))
 }
 
 func extrapolate(nums []int, part2 bool) int {

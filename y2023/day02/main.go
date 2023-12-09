@@ -10,8 +10,8 @@ import (
 
 func main() {
 	fmt.Println(
-		Part1(utils.GetData("2023/day2.txt")),
-		Part2(utils.GetData("2023/day2.txt")))
+		Part1(utils.GetDayData(2023, 2)),
+		Part2(utils.GetDayData(2023, 2)))
 }
 
 type cubes struct {

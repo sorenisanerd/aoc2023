@@ -29,9 +29,9 @@ func Test_Part2(t *testing.T) {
 }
 
 func Test_FullPart1(t *testing.T) {
-	assert.Equal(t, 54697, part(utils.GetData("2023/day1.txt"), false))
+	assert.Equal(t, 54697, part(utils.GetDayData(2023, 1), false))
 }
 
 func Test_FullPart2(t *testing.T) {
-	assert.Equal(t, 54885, part(utils.GetData("2023/day1.txt"), true))
+	assert.Equal(t, 54885, part(utils.GetDayData(2023, 1), true))
 }

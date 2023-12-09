@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	fmt.Println(Parts(utils.GetData("2023/day1.txt")))
+	fmt.Println(Parts(utils.GetDayData(2023, 1)))
 }
 
 func Parts(s string) (int, int) {
