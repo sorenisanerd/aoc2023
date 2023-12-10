@@ -17,6 +17,20 @@ func (g Grid[T]) Set(xy XY, r T) T {
 	return r
 }
 
+func (g Grid[T]) FindFirst(c T) XY {
+	for y := 0; y < len(g); y++ {
+		for x := 0; x < len(g[y]); x++ {
+			xy := XY{x, y}
+			if g.Get(xy) == c {
+				return xy
+			}
+		}
+	}
+	return NotFound
+}
+
+var NotFound = XY{-2134124124211, -124312412341}
+
 func GetLines(s string) []string {
 	return strings.Split(s, "\n")
 }
