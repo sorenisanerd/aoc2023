@@ -26,10 +26,8 @@ func (g Grid[T]) FindFirst(c T) XY {
 			}
 		}
 	}
-	return NotFound
+	panic("Not found")
 }
-
-var NotFound = XY{-2134124124211, -124312412341}
 
 func GetLines(s string) []string {
 	return strings.Split(s, "\n")
