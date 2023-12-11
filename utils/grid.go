@@ -110,6 +110,7 @@ func (xy XY) Add(other XY) XY {
 	return xy
 }
 
+// MD calculates the Manhattan Distance between two points
 func (xy XY) MD(other XY) int {
 	x := xy.X - other.X
 	x = max(x, -x)
