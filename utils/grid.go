@@ -94,3 +94,11 @@ func (xy XY) Add(other XY) XY {
 	xy.Y += other.Y
 	return xy
 }
+
+func (xy XY) MD(other XY) int {
+	x := xy.X - other.X
+	x = max(x, -x)
+	y := xy.Y - other.Y
+	y = max(y, -y)
+	return x + y
+}
