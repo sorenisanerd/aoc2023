@@ -12,7 +12,6 @@ func TestParts(t *testing.T) {
 	assert.Equal(t, 0, p1)
 	assert.Equal(t, 0, p2)
 
-	return
 	p1, p2 = Parts(utils.GetDayData(2023, 25))
 	assert.Equal(t, 0, p1)
 	assert.Equal(t, 0, p2)
