@@ -1,6 +1,10 @@
 package utils
 
-import "strings"
+import (
+	"strings"
+
+	"github.com/hashicorp/go-set/v2"
+)
 
 type Char interface {
 	byte | rune
@@ -27,6 +31,19 @@ func (g Grid[T]) FindFirst(c T) XY {
 		}
 	}
 	panic("Not found")
+}
+
+func (g Grid[T]) FindAll(c T) *set.Set[XY] {
+	s := set.From([]XY{})
+	for y := 0; y < len(g); y++ {
+		for x := 0; x < len(g[y]); x++ {
+			xy := XY{x, y}
+			if g.Get(xy) == c {
+				s.Insert(xy)
+			}
+		}
+	}
+	return s
 }
 
 func GetLines(s string) []string {
